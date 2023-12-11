@@ -107,17 +107,17 @@
       </tr>
       <tr>
         <td colspan="2">
-          <label>Regular Expression: <input type="text" dir="ltr" id="ip-regex" placeholder="^104\.17\.|^141\." /></label>
+          <label>Reg Expression  : <input type="text" dir="ltr" id="ip-regex" placeholder="^104\.17\.|^141\." /></label>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <label>Start IP Address  : <input type="text" dir="ltr" id="ip-include" placeholder="104.17,141" /></label>
+          <label>Start IP Address: <input type="text" dir="ltr" id="ip-include" placeholder="104.17,141" /></label>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <label>Block IP Range    : <input type="text" dir="ltr" id="ip-exclude" placeholder="8,103.22" /></label>
+          <label>Block IP Range  : <input type="text" dir="ltr" id="ip-exclude" placeholder="8,103.22" /></label>
         </td>
       </tr>
       <tr>
@@ -140,7 +140,7 @@
     <table class="list">
       <thead>
         <tr>
-          <th width="150">
+          <th width="60">
             <a class="download-link" href="#" onclick="downloadAsCSV()">
               <img height="24px" src="assets/excel.png" />
             </a>
@@ -2274,7 +2274,7 @@ async function testIPs(ipList) {
         document.getElementById('ip-latency').innerText = Math.floor((performance.now() - startTime) / chNo) + 'ms';
       } else {
         timeout = 1.2 * multiply * maxLatency;
-        document.getElementById('test-no').innerText = `Test no ${testNo}:`;
+        document.getElementById('test-no').innerText = `Ping ${testNo}:`;
         document.getElementById('ip-no').innerText = ip;
         document.getElementById('ip-no').style = `color: red`;
         document.getElementById('ip-try').innerText = '';
