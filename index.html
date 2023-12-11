@@ -100,10 +100,50 @@
 <body>
   <div style="padding: 0; margin: auto; width: 360px;">
     <table dir="ltr" class="content">
-      <!-- ... (Bagian lain dari tabel) ... -->
+      <tr>
+        <td colspan="2" align="center" style="border-bottom: 1px solid #666;">
+          <strong>Cloudflare's Clean IP Scanner</strong>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Number of IPs: <input type="number" id="max-ip" min="1" max="5000" /></label>
+        </td>
+        <td>
+          <label>Delay: <input type="number" id="max-latency" min="50" max="3000" step="50"/></label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <label>Reg Expression : <input type="text" dir="ltr" id="ip-regex" placeholder="^104\.17\.|^141\." /></label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <label>Start IP Address: <input type="text" dir="ltr" id="ip-include" placeholder="104.17,141" /></label>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <label>Block IP Range  : <input type="text" dir="ltr" id="ip-exclude" placeholder="8,103.22" /></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="ip-list.html" target="_blank">Observation of sufferings</a>
+        </td>
+        <td>
+          <button id="btn-start" class="start" onclick="startScan()">Start</button>
+          <button id="btn-cancel" class="cancel" onclick="cancelScan()">Stop</button>
+        </td>
+      </tr>
     </table>
     <div class="text-div">
-      <!-- ... (Bagian lain dari elemen div.text-div) ... -->
+      <div id="start-hint" style="color: red;">Turn off your VPN before starting!</div>
+      <div style="width: 110px; float: right;"><span id="test-no"></span></div>
+      <div style="width: 120px; float: right;"><span id="ip-no"></span></div>
+      <div style="width: 30px; float: right;"><span id="ip-try"></span></div>
+      <div style="width: 60px; float: right;"><span id="ip-latency"></span></div>
     </div>
     <table class="list">
       <thead>
