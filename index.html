@@ -2283,7 +2283,7 @@ async function testIPs(ipList) {
         document.getElementById('ip-latency').innerText = Math.floor((performance.now() - startTime) / chNo) + 'ms';
       } else {
         timeout = 1.2 * multiply * maxLatency;
-        document.getElementById('test-no').innerText = `تست شماره ${testNo}:`;
+        document.getElementById('test-no').innerText = `Test no ${testNo}:`;
         document.getElementById('ip-no').innerText = ip;
         document.getElementById('ip-no').style = `color: red`;
         document.getElementById('ip-try').innerText = '';
@@ -2340,19 +2340,19 @@ async function testIPs(ipList) {
 
   if (immediateStop) {
     immediateStop = false;
-    document.getElementById('test-no').innerText = `لغو شد!`;
+    document.getElementById('test-no').innerText = `Cancelled!`;
     document.getElementById('test-no').style = `color: red; font-weight: bold;`;
   } else {
-    document.getElementById('test-no').innerText = `پایان`;
+    document.getElementById('test-no').innerText = `End`;
     document.getElementById('test-no').style = `color: green; font-weight: bold;`;
   }
 }
 
 function copyToClipboard(ip) {
   navigator.clipboard.writeText(ip).then(() => {
-    alert('آی‌پی‌ در کلیپ‌بورد کپی شد.');
+    alert('IP copied to clipboard.');
   }).catch(() => {
-    alert('مشکلی پیش آمده است!');
+    alert('There is a Problem!');
   });
 }
 
